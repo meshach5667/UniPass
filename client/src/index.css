@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme (default) - Lisk-inspired Web3 theme */
+    --background: 220 27% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Lisk primary colors - Blue gradient theme */
+    --primary: 214 100% 57%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-glow: 214 100% 67%;
+    --primary-dark: 214 100% 47%;
+
+    --secondary: 280 70% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 214 100% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 214 100% 57%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 27% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 214 100% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 214 100% 57%;
+    
+    /* Lisk-inspired Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(214, 100%, 57%) 0%, hsl(280, 70%, 60%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(280, 70%, 60%) 0%, hsl(320, 70%, 60%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220, 20%, 12%) 0%, hsl(220, 20%, 10%) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(214, 100%, 57%) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(280, 70%, 60%) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(214, 100%, 47%) 0px, transparent 50%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(214 100% 57% / 0.4);
+    --shadow-glow-secondary: 0 0 40px hsl(280 70% 60% / 0.3);
+    --shadow-card: 0 8px 32px hsl(220 27% 4% / 0.8);
+    --shadow-lg: 0 20px 60px hsl(220 27% 4% / 0.9);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .light {
+    /* Light theme overrides - Lisk-inspired */
+    --background: 0 0% 100%;
+    --foreground: 220 27% 10%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 220 27% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 27% 10%;
+
+    /* Lisk primary colors for light theme */
+    --primary: 214 100% 52%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-glow: 214 100% 62%;
+    --primary-dark: 214 100% 42%;
+
+    --secondary: 280 70% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 214 100% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 100% 52%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 27% 10%;
+    --sidebar-primary: 214 100% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 220 27% 10%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 214 100% 52%;
+    
+    /* Light theme gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(214, 100%, 52%) 0%, hsl(280, 70%, 55%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(280, 70%, 55%) 0%, hsl(320, 70%, 55%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 0%, 98%) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(214, 100%, 52%) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(280, 70%, 55%) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(214, 100%, 42%) 0px, transparent 50%);
+    
+    /* Light theme shadows */
+    --shadow-glow: 0 0 40px hsl(214 100% 52% / 0.25);
+    --shadow-glow-secondary: 0 0 40px hsl(280 70% 55% / 0.2);
+    --shadow-card: 0 8px 32px hsl(220 27% 50% / 0.12);
+    --shadow-lg: 0 20px 60px hsl(220 27% 50% / 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-mesh {
+    background: var(--gradient-mesh);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-glow-secondary {
+    box-shadow: var(--shadow-glow-secondary);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .glass {
+    @apply bg-card/50 backdrop-blur-xl border border-border/50;
+  }
+  
+  .glass-strong {
+    @apply bg-card/80 backdrop-blur-2xl border border-border/60;
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: var(--shadow-glow);
+    }
+    50% {
+      box-shadow: var(--shadow-glow-secondary);
+    }
+  }
+  
+  /* Lisk network indicator */
+  .network-indicator {
+    @apply relative;
+  }
+  
+  .network-indicator::before {
+    content: '';
+    @apply absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-success;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
