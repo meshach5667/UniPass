@@ -34,7 +34,7 @@ const Landing = () => {
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
              Creators Dome<br />
-              <span className=" bg-clip-text text-black animate-float">Your Royalty, Your Rules.</span>
+              <span className=" bg-clip-text text-black animate-float", Your Rules.</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
